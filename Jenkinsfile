@@ -18,7 +18,7 @@ pipeline {
           stage('Docker login') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'dockerhub-pwd', passwordVariable: 'PASS', usernameVariable: 'USER')]) {
-                    sh "echo $PASS | docker login -u $USER --password-stdin"
+                    sh "echo $PASS | docker login -u rahultyadav --password-stdin"
                     sh 'docker push rahultyadav/akshatnewimg6july:v1'
                 }
             }
